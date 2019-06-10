@@ -1,10 +1,12 @@
+import {decode} from 'wav-decoder';
+import AudioFeeder from 'audio-feeder';
 
 export default class AudioEngine{
     constructor(){
         this.audioArray = [];
-        this.audioContext = null;
-        this.playFlag = false;
         this.playedChunkId = 0;
+        this.audioFeeder = null;
+        this.audioContext = null;
 
         this.initializeAudioContext();
     }
@@ -15,36 +17,28 @@ export default class AudioEngine{
     }
 
     feedAudioChunks(audioChunk){
-        this.audioArray.push(this.convertBase64StringToIntArray(audioChunk));
+        let decodedAudioChunk = this.convertBase64StringToIntArray(audioChunk);
+        
+        decode(decodedAudioChunk).then(data => {
+            if(this.audioFeeder === null){
+                this.audioFeeder = new AudioFeeder(this.audioContext);
+
+                this.audioFeeder.init(2, data.sampleRate);
+            }
+            this.audioFeeder.bufferData([data.channelData[0], data.channelData[1]]);
+            
+            this.audioArray.push(data.channelData);
+        })
     }
 
     play(){
         if(this.audioArray.length != 0){
             this.audioContext.resume();
-            
-            let audioSource = this.audioContext.createBufferSource();
-            
-            this.startPlaying(audioSource);
 
-            audioSource.onended = () => {
-                this.playedChunkId += 1;
-                this.play();
-            }
+            this.audioFeeder.start();
         }else{
             console.log("There is no audio chunks to play sound from.");
         }
-    }
-
-    async startPlaying(audioSource){
-        let audioBuffer = this.createAudioBuffer(this.audioArray[this.playedChunkId]);        
-
-        audioBuffer.then(buffer => {
-            console.log("Buffer:" + audioSource.buffer);
-            audioSource.buffer = buffer;
-            audioSource.connect(this.audioContext.destination);
-            audioSource.loop = false;
-            audioSource.start();
-        })
     }
 
     convertBase64StringToIntArray(string){
@@ -58,7 +52,4 @@ export default class AudioEngine{
         return bytes.buffer;
     }
 
-    async createAudioBuffer(audioChunk){
-        return await this.audioContext.decodeAudioData(audioChunk);
-    }
 }
