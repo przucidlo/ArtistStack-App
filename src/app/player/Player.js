@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import SockJs from 'sockjs-client'
 import Stomp from 'stompjs';
-import {Howl, Howler} from 'howler';
 import AudioEngine from './AudioEngine';
 import {Button} from 'reactstrap';
 
@@ -19,7 +18,6 @@ class Player extends Component{
 
     establishSocketConnection(){
         let stompClient;
-        let isConnected = false;
 
         stompClient = Stomp.over(new SockJs("http://localhost:8080/endpoint"));
 
@@ -43,9 +41,6 @@ class Player extends Component{
 
     handleAudioStream(payload){
         let payloadJson = JSON.parse(payload.body);
-
-        //console.log(payloadJson);
-
         let parsedFileData = atob(payloadJson.encodedBytes);
 
         this.audioEngine.feedAudioChunks(parsedFileData);
@@ -58,7 +53,7 @@ class Player extends Component{
 
     render(){
         return (<div>
-            <Button color="secondary" onClick={this.handleClick}>Start</Button>
+            <Button color="primary" onClick={this.handleClick}>Start</Button>
         </div>);
     }
 }

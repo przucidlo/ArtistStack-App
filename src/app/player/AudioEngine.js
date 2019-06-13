@@ -21,7 +21,8 @@ export default class AudioEngine{
         
         decode(decodedAudioChunk).then(data => {
             if(this.audioFeeder === null){
-                this.audioFeeder = new AudioFeeder(this.audioContext);
+                this.audioFeeder = new AudioFeeder();
+                this.audioFeeder._options.audioContext = this.audioContext;
 
                 this.audioFeeder.init(2, data.sampleRate);
             }
@@ -32,7 +33,7 @@ export default class AudioEngine{
     }
 
     play(){
-        if(this.audioArray.length != 0){
+        if(this.audioArray.length !== 0){
             this.audioContext.resume();
 
             this.audioFeeder.start();
