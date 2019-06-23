@@ -16,6 +16,8 @@ const initialState = {
 
 export default function (state = initialState, action) {
     switch (action.type) {
+        case SET_VOLUME:
+            return {...state, volume: action.value};
         default:
             return state;
     }

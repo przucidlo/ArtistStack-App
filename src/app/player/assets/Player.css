@@ -1,0 +1,9 @@
+.player {
+    height: 52px;
+    background-color: #212121;
+}
+
+.center-content {
+    margin: auto;
+    display: block;
+}

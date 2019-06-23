@@ -1,0 +1,33 @@
+.background-bar {
+    height: 3px;
+    width: 100%;
+    background-color: grey;
+}
+
+.background-bar-volume {
+    height: 3px;
+    width: 60px;
+    background-color: grey;
+}
+
+.duration-bar {
+    font-size: 15px;
+}
+
+.player-controller{
+    padding-left: 6px;
+}
+
+.volume-control {
+    margin-left: 0px;
+}
+
+.track-information-song-cover{
+    width: 48px;
+    height: 48px;
+    background-color: grey;
+}
+
+.track-information-song-name{
+    word-wrap: break-word;
+}
