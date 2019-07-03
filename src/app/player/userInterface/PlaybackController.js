@@ -11,13 +11,13 @@ class PlaybackController extends Component{
         return (
             <div className="h-100 row align-items-center">
                 <div className='col-auto p-0'>
-                    <img src={previousIcon}></img>
+                    <img src={previousIcon}/>
                 </div>
                 <div className='col-auto p-0'>
-                    <img src={playIcon}></img>
+                    <img src={playIcon}/>
                 </div>
                 <div className='col-auto p-0'>
-                    <img src={nextIcon}></img>
+                    <img src={nextIcon}/>
                 </div>
             </div>
         )

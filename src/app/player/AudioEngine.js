@@ -42,6 +42,13 @@ export default class AudioEngine{
         }
     }
 
+    pause(){
+    }
+
+    changeVolume(value){
+        this.audioFeeder.volume(value);
+    }
+
     convertBase64StringToIntArray(string){
         let length = string.length;
         let bytes = new Uint8Array(length);
