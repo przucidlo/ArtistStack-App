@@ -11,7 +11,7 @@ class App extends Component{
 			<div>
 				<div>
 					<Navbar className="navbar">
-						<NavbarBrand><img src={logo} style={{width: '32%', height: '32%'}}/></NavbarBrand>
+						<NavbarBrand><img src={logo} alt='' style={{width: '32%', height: '32%'}}/></NavbarBrand>
 					</Navbar>
 				</div>
 				<div className="h-100">

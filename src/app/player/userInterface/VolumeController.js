@@ -7,7 +7,7 @@ class VolumeController extends Component{
         return (
             <div className='h-100 align-items-center row'>
                 <div className='col-auto p-0 volume-control'>
-                    <img src={volume} />
+                    <img src={volume} alt=''/>
                 </div>
                 <div className='col-auto p-0'>
                     <div className='background-bar-volume'/>

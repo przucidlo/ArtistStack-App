@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import SockJs from 'sockjs-client'
 import Stomp from 'stompjs';
 import AudioEngine from './AudioEngine';
-import {Button} from 'reactstrap';
 import PlaybackController from './userInterface/PlaybackController';
 import './assets/Player.css';
 import DurationBar from './userInterface/DurationBar';

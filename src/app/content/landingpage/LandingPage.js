@@ -1,11 +1,5 @@
 import React, {Component} from 'react';
 import './assets/LandingPage.css';
-import image from './assets/music_notes_PNG6.png';
-
-let backgroundStyle = {
-    backgroundImage: `url(${image})`,
-    backgroundColor: 'rgba(0,0,0,0.4)'
-}
 
 class LandingPage extends Component{
     render(){
