@@ -1,44 +1,53 @@
 {
-  "name": "music_stack",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "audio-feeder": "^0.4.22",
-    "bootstrap": "^4.3.1",
-    "howler": "^2.1.2",
-    "js-cookie": "^2.2.0",
-    "jwt-decode": "^2.2.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-redux": "^7.1.0",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
-    "reactstrap": "^8.0.0",
-    "redux": "^4.0.1",
-    "sockjs-client": "^1.3.0",
-    "stompjs": "^2.3.3",
-    "super-tiny-wave-decoder": "^0.1.3",
-    "wav-decoder": "^1.3.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "music_stack",
+    "version": "0.1.0",
+    "private": true,
+    "main": "index.tsx",
+    "dependencies": {
+        "@material-ui/core": "^4.9.4",
+        "@material-ui/icons": "^4.9.1",
+        "@types/jest": "^25.1.3",
+        "@types/node": "^13.7.6",
+        "@types/react": "^16.9.23",
+        "@types/react-dom": "^16.9.5",
+        "@types/react-redux": "^7.1.7",
+        "audio-feeder": "^0.4.22",
+        "bootstrap": "^4.3.1",
+        "howler": "^2.1.2",
+        "js-cookie": "^2.2.0",
+        "jwt-decode": "^2.2.0",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-redux": "^7.1.0",
+        "react-router-dom": "^5.0.1",
+        "react-scripts": "^3.4.0",
+        "reactstrap": "^8.0.0",
+        "redux": "^4.0.1",
+        "sockjs-client": "^1.3.0",
+        "stompjs": "^2.3.3",
+        "super-tiny-wave-decoder": "^0.1.3",
+        "typescript": "^3.8.2",
+        "wav-decoder": "^1.3.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
 }
